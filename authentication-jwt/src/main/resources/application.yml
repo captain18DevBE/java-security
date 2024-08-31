@@ -1,17 +1,24 @@
 #spring.
 #application.name=authentication-jwt
+server:
+  port: 8080
+  servlet:
+    context-path: /identity
 
 spring:
   application:
     name: authentication-jwt
-  datasource:
-    password: tranleduy
-    username: PostgreSQL 16
-    hikari:
-      connection-timeout: 20000
-      maximum-pool-size: 5
-    url: jdbc:postgresql://localhost:5432/learn-spring-summer
 
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring-boot-summer
+    username: postgres
+    password: tranleduy
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
+    show-sql: true
+
+jwt:
+  signerKey: "BcUF65+S5fAbeS9S+bsx1IiQvqwqMff6lcxzlouCEEwaAnmBv7/Asq9U8Hf9jXUK"
+  valid-duration: 3600
+  refreshable-duration: 36000

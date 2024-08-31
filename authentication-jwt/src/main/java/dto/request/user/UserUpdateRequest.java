@@ -1,29 +1,20 @@
-package com.example.authenticationjwt.entity;
-import jakarta.persistence.*;
+package dto.request.user;
+
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
 import java.util.Set;
 
-@Getter
-@Setter
+@Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Entity
-@Table(name = "users")
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    String id;
-    String username;
+public class UserUpdateRequest {
     String password;
     String firstName;
     String lastName;
     LocalDate dob;
-
-    @ManyToMany
-    Set<Role> roles;
+    Set<String> roles;
 }

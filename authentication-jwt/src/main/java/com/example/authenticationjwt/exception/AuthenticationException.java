@@ -1,19 +1,17 @@
 package com.example.authenticationjwt.exception;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+@Builder
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class AppException extends RuntimeException {
+public class AuthenticationException extends RuntimeException {
     ErrorCode errorCode;
 
-    public AppException(ErrorCode errorCode) {
+    public AuthenticationException(ErrorCode errorCode) {
         super(errorCode.getMessage());
         this.errorCode = errorCode;
     }
-
 }
