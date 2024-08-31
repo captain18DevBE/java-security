@@ -1,0 +1,17 @@
+#spring.
+#application.name=authentication-jwt
+
+spring:
+  application:
+    name: authentication-jwt
+  datasource:
+    password: tranleduy
+    username: PostgreSQL 16
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 5
+    url: jdbc:postgresql://localhost:5432/learn-spring-summer
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
